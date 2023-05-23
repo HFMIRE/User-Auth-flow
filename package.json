@@ -1,0 +1,33 @@
+{
+  "name": "user-auth-flow",
+  "version": "1.0.0",
+  "description": "A User Authentication flow that uses microservice architecture.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node src/index.ts", 
+    "dev:ts": "nodemon --watch '*.ts' --exec 'ts-node' src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HFMIRE/User-Auth-flow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HFMIRE/User-Auth-flow/issues"
+  },
+  "homepage": "https://github.com/HFMIRE/User-Auth-flow#readme",
+  "dependencies": {
+    "@prisma/client": "^4.14.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.2.3",
+    "nodemon": "^2.0.22",
+    "prisma": "^4.14.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
