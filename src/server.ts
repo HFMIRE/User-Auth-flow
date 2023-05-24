@@ -1,7 +1,16 @@
-import express from 'express'
+import express, { Express, Request, Response, NextFunction}  from 'express'
 import router from './router'
-const app = express()
+import morgan from "morgan"
+const app: Express = express()
+app.use(morgan('dev'))
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
+const mymiddleware = function(req: Request, res:Response, next: NextFunction)  {
+ console.log("Greeting Earthlings")
+    next()
+}
+app.use(mymiddleware)
 
 app.get('/', (req, res) => {
     console.log("hello from express")

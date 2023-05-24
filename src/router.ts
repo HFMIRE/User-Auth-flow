@@ -4,7 +4,7 @@ const router = Router()
 
 // get a product using a given ID 
 router.get('/product/:id', (req, res) => {
-    res.json({message:" This is a unique product"} )
+    res.json({message: "Hello Back"} )
 })
 //  get all the products (for an authenticated user)
 router.get('/product', (req, res) => {
