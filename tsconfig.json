@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
-      "sourceMap": true,
-      "module": "CommonJS",
-      "outDir": "./dist",
-      "strict": true,
-      "lib": ["esnext"],
-      "esModuleInterop": true, 
-      
-    }
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "strict": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true
   }
+}
