@@ -25,10 +25,10 @@ export const signInUser = async (req, res) => {
       username: req.body.username,
     },
   });
-  const isVaild = await comparePassword(req.body.user,  user.password)
-   if (!isVaild) {
-    res.status(401).json({message: "Nope"})
-   }
-   const token = createJWT(user);
-   res.json({ token });
+  const isVaild = await comparePassword(req.body.password, user.password);
+  if (!isVaild) {
+    res.status(401).json({ message: "Nope" });
+  }
+  const token = createJWT(user);
+  res.json({ token });
 };

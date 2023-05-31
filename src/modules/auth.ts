@@ -25,24 +25,25 @@ export const protect = (req, res, next) => {
 
   if (!bearer) {
     res.status(401);
-    res.send({ message: "Not Authorised" });
+    res.send({ message: "Not Authorised - didnt have a bearer token " });
     return;
   }
 
   const [, token] = bearer.split(" ");
   if (!token) {
     res.status(401);
-    res.send({ message: "Not Authorised" });
+    res.send({ message: "Not Authorised - not in the right format" });
     return;
   }
 
   try {
     const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decodedToken;
+    next();
   } catch (e) {
     console.log(e);
     res.status(401);
-    res.send({ message: "Not Authorised" });
+    res.send({ message: "Not Authorised - wrong bearer token" });
     return;
   }
 };
